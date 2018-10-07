@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "eslint-fix": "eslint src/**/**/*.vue --fix"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
