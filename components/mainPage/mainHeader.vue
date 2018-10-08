@@ -1,7 +1,7 @@
 <template>
   <div class='mainHeader'>
     <!-- logo -->
-    <div class='logo'>
+    <div @click='goKids' class='logo'>
       <img src='../../assets/logo.png'>
     </div>
     <!-- 分类 -->
@@ -9,7 +9,7 @@
       <table class="classTable">
         <tr>
           <td>
-            <div v-on:click="goKids">童装
+            <div>童装
               <span class="menu-icon-box e-menu-icon-box">
 			      				<i class="icon icon-arrow-down">
 			      				</i>
@@ -77,6 +77,7 @@
   };
 
 </script>
+
 
 <style type="text/css">
   .mainHeader {
