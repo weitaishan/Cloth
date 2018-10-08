@@ -1,33 +1,37 @@
 <template>
   <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        Cloth
-      </h1>
-      <h2 class="subtitle">
-        My praiseworthy Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
+    <mainHeader></mainHeader>
+
+    <!--<div>-->
+      <!--<logo/>-->
+      <!--<h1 class="title">-->
+        <!--Cloth-->
+      <!--</h1>-->
+      <!--<h2 class="subtitle">-->
+        <!--My praiseworthy Nuxt.js project-->
+      <!--</h2>-->
+      <!--<div class="links">-->
+        <!--<a-->
+          <!--href="https://nuxtjs.org/"-->
+          <!--target="_blank"-->
+          <!--class="button&#45;&#45;green">Documentation</a>-->
+        <!--<a-->
+          <!--href="https://github.com/nuxt/nuxt.js"-->
+          <!--target="_blank"-->
+          <!--class="button&#45;&#45;grey">GitHub</a>-->
+      <!--</div>-->
+    <!--</div>-->
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import mainHeader from '../components/mainPage/mainHeader';
 
 export default {
   components: {
-    Logo
+    Logo,
+    mainHeader
   }
 }
 </script>

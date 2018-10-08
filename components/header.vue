@@ -40,12 +40,12 @@
 
 <script>
   export default {
-    name: "header"
+    name: "main-header"
   }
 </script>
 
-<style scoped type="text/less">
-  .header{
+<style scoped lang='less' type="text/less">
+  .header {
 
     height: 100px;
     background: #41b883;

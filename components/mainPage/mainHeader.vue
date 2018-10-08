@@ -2,7 +2,7 @@
 	<div class  ='mainHeader'>
 		<!-- logo -->
 		<div class  ='logo'>
-		<img src='../assets/logo.png'>
+		<img src='../../assets/logo.png'>
 		</div>
 		<!-- 分类 -->
 		<div class="headerClassify">
