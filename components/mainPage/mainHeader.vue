@@ -11,18 +11,8 @@
       <div class="menu-box">
 
         <ul>
-          <li class="menu">
-            <a href="#">童装</a>
-            <div class="sub-menu"></div>
-          </li>
-
-          <li class="menu">
-            <a href="#">牛仔</a>
-            <div class="sub-menu"></div>
-          </li>
-
-          <li class="menu">
-            <a href="#">裙子</a>
+          <li v-for="(item, index) in items" v-bind:id="item.id" @click="itemClick(index)" class="menu">
+            <a href="#">{{item.text}}</a>
             <div class="sub-menu"></div>
           </li>
         </ul>
@@ -58,13 +48,40 @@
 
   export default {
 
+    data() {
+
+      return{
+
+        items: [
+          {
+            text: '童装',
+            id: 'kids'
+          },
+          {
+            text: '牛仔',
+            id: 'cowboy'
+          },
+          {
+            text: '裙子',
+            id: 'skirt'
+          }],
+        nowIndex: -1,
+      }
+
+    },
     methods: {
 
       goKids() {
 
         this.$router.push('/kids');
 
+      },
+      itemClick(index) {
+
+        this.nowIndex=index;
+
       }
+
     }
   }
 

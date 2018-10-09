@@ -29,7 +29,8 @@
 	 </div> 
  </template>
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
+import 'swiper/dist/css/swiper.css';
 	export default {
 		name: 'carrousel',
 		data () {
@@ -82,6 +83,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 		height: 600px;
 		background-size: 100%;
 	}
+
 	.swiper-button-prev{
 		background-image: url('../../assets/swiper_button_left.png');
 		width: 30px;
