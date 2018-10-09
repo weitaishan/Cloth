@@ -1,7 +1,7 @@
 <template>
   <section class="container">
 
-<!--<mainBanner></mainBanner>-->
+    <!--<mainBanner></mainBanner>-->
 
   </section>
 </template>
@@ -13,6 +13,7 @@
   export default {
     components: {
       mainHeader,
+      // mainBanner
     },
     methods: {
 
