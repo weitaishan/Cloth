@@ -83,7 +83,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 		background-size: 100%;
 	}
 	.swiper-button-prev{
-		background-image: url('../assets/swiper_button_left.png');
+		background-image: url('../../assets/swiper_button_left.png');
 		width: 30px;
 		height: 30px;
 		background-size: 100%;
@@ -93,6 +93,6 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 		width: 30px;
 		height: 30px;
 		background-size: 100%;
-		background-image: url('../assets/swiper_button_right.png');
+		background-image: url('../../assets/swiper_button_right.png');
 	}
 </style>
