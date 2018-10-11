@@ -262,10 +262,16 @@
     }
 
     .fade-enter-active, .fade-leave-active {
-      transition: opacity .5s;
+      transition: all .3s ease-in;
+      height: 230px;
+      opacity: 1;
+      overflow: hidden;
+
     }
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
       opacity: 0;
+      height: 0;
+
     }
 
   }
