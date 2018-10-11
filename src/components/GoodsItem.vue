@@ -9,12 +9,12 @@
             <img class="item-image" :src="item.imageUrl" alt=""/>
             <div class="item-evaluation">
               <p class="review-txt">{{item.review}}</p>
-              <p class="author">来自{{item.author}}的评价</p>
+              <!--<p class="author">来自{{item.author}}的评价</p>-->
             </div>
             <div class="item-desc">
-              <span class="item-name">{{item.name}}</span>
-              <span class="sep">|</span>
-              <span class="item-price">{{item.price}}元</span>
+              <!--<span class="item-name">{{item.name}}</span>-->
+              <!--<span class="sep">|</span>-->
+              <span class="item-price">￥{{item.price}}元</span>
             </div>
           </a>
         </li>
@@ -61,6 +61,14 @@
             author: '欧阳长',
             name: '小米路由器3',
             price: '149'
+          },
+          {
+            sourceUrl: '//www.mi.com/miwifi3/',
+            imageUrl: 'http://i3.mifile.cn/a4/8949026b-fa9a-4370-989b-5d5e2f149106',
+            review: '我就是喜欢这样的路由器，我每天回到家都要连着WiFi上网，上班就没办法连着呢！每次都等待着下班，我好...',
+            author: '欧阳长',
+            name: '小米路由器3',
+            price: '149'
           }
         ]
       }
@@ -95,9 +103,11 @@
   }
 
   .hot-content {
+
     .hot-item {
+      overflow: hidden;
       float: left;
-      width: 296px;
+      width: 234px;
       height: 415px;
       margin: 0 0 14px 14px;
       cursor: pointer;
@@ -112,10 +122,10 @@
       }
       .item-image {
         width: 296px;
-        height: 220px;
+        height: 300px;
       }
       .review-txt {
-        height: 72px;
+        height: 24px;
         margin: 22px 28px;
         font-size: 14px;
         line-height: 24px;
