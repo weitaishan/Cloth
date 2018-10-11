@@ -15,13 +15,14 @@
           <ul>
             <li v-for="item in items"
                 v-bind:id="item.type"
+                @mouseenter="evtHeaderEnter(item.type)"
+                @mouseleave="evtHeaderLeave()"
                 class="menu">
               <template v-if="item.type">
 
                 <a
                   href="#"
-                  @mouseenter="evtHeaderEnter(item.type)"
-                  @mouseleave="evtHeaderLeave()">{{item.name}}</a>
+                >{{item.name}}</a>
 
               </template>
               <template v-else>
@@ -82,11 +83,12 @@
     data() {
 
       return {
-        hotStatus: true,
+        //控制子级菜单隐藏与显示
         headerStatus: false,
+        //控制定时器
         tids: '',
+        //当前展示的子级菜单
         currentItem: this.items,
-
         items: [
           {
             name: '童装',
@@ -141,7 +143,6 @@
     .logo {
       left: 20px;
       margin-top: 15px;
-      /*line-height: 80px;*/
       background: url("../assets/logo.png") no-repeat;
       background-size: 100% 100%;
       width: 50px;
