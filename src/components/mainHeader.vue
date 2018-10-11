@@ -2,44 +2,75 @@
 
   <el-header class="header-container" style="height: 80px">
 
-    <div class="header-left">
+    <div class="container">
+      <div class="header-left">
 
-      <div class='logo'>
-        <img src='../assets/logo.png'>
+        <!--<div class='logo'>-->
+        <a href="#" class="logo"></a>
+        <!--<img src='../assets/logo.png' class="logo">-->
+        <!--</div>-->
+
+        <div class="menu-box">
+
+          <ul>
+            <li v-for="item in items"
+                v-bind:id="item.type"
+                class="menu">
+              <template v-if="item.type">
+
+                <a
+                  href="#"
+                  @mouseenter="evtHeaderEnter(item.type)"
+                  @mouseleave="evtHeaderLeave()">{{item.name}}</a>
+
+              </template>
+              <template v-else>
+                <a :href="item.sourceUrl" target="_blank" class="nav-item">{{item.name}}</a>
+              </template>
+            </li>
+          </ul>
+
+        </div>
+
+
       </div>
 
-      <div class="menu-box">
+      <div class="header-right">
 
-        <ul>
-          <li v-for="(item, index) in items" v-bind:id="item.id" @click="itemClick(index)" class="menu">
-            <a href="#">{{item.text}}</a>
-            <div class="sub-menu"></div>
+        <div class="menu-box">
+
+          <ul>
+            <li class="menu">
+              <a href="#">关于我们</a>
+            </li>
+
+            <li class="menu">
+              <a href="#">联系方式</a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+    <transition name="fade">
+      <div class="header-menu"
+           @mouseenter="evtHeaderEnter()"
+           @mouseleave="evtHeaderLeave()"
+           v-show="headerStatus">
+        <ul class="menus clearfix">
+          <li class="product" v-for="item in currentItem">
+            <!--<a :href="item.sourcePath">-->
+            <!--<img :src="item.imgUrl" alt="" class="product-img"/>-->
+            <!--</a>-->
+            <div class="product-name">{{item.name}}</div>
+            <div class="product-price">
+              <!--{{item.price}}-->
+            </div>
           </li>
         </ul>
-
       </div>
-
-
-    </div>
-
-    <div class="header-right">
-
-      <div class="menu-box">
-
-        <ul>
-          <li class="menu">
-            <a href="#">关于我们</a>
-          </li>
-
-          <li class="menu">
-            <a href="#">联系方式</a>
-          </li>
-        </ul>
-
-      </div>
-
-    </div>
-
+    </transition>
   </el-header>
 
 </template>
@@ -51,35 +82,44 @@
     data() {
 
       return {
+        hotStatus: true,
+        headerStatus: false,
+        tids: '',
+        currentItem: this.items,
 
         items: [
           {
-            text: '童装',
-            id: 'kids'
+            name: '童装',
+            type: 'kids'
           },
           {
-            text: '牛仔',
-            id: 'cowboy'
+            name: '牛仔',
+            type: 'cowboy'
           },
           {
-            text: '裙子',
-            id: 'skirt'
+            name: '裙子',
+            type: 'skirt'
           }],
-        nowIndex: -1,
+        kids: [{name: '衣服'}],
+        cowboy: [{name: '牛仔'}],
+        skirt: [{name: '裙子'}],
       }
 
     },
     methods: {
 
-      goKids() {
-
-        this.$router.push('/kids');
-
+      evtHeaderEnter(menuType) {
+        if (menuType) {
+          this.currentItem = this[menuType]
+        }
+        this.headerStatus = true
+        clearTimeout(this.tids)
       },
-      itemClick(index) {
-
-        this.nowIndex = index;
-
+      evtHeaderLeave() {
+        let self = this
+        this.tids = setTimeout(function () {
+          self.headerStatus = false
+        }, 300)
       }
 
     }
@@ -99,25 +139,21 @@
     background-color: black;
 
     .logo {
-
       left: 20px;
       margin-top: 15px;
-      line-height: 80px;
-      display: inline-block;
+      /*line-height: 80px;*/
+      background: url("../assets/logo.png") no-repeat;
+      background-size: 100% 100%;
       width: 50px;
       height: 50px;
-
-      img {
-        width: 50px;
-        height: 50px;
-      }
+      position: absolute;
 
     }
 
     .menu-box {
 
       display: inline-block;
-      margin-left: 30px;
+      margin-left: 80px;
       margin-bottom: 15px;
       height: 60px;
 
@@ -173,6 +209,64 @@
         font-weight: bold;
       }
     }
+
+    .header-menu {
+      position: absolute;
+      left: 0;
+      top: 80px;
+      width: 100%;
+      height: 230px;
+      background: #fff;
+      box-shadow: 0 1px 5px #ccc;
+      z-index: 11;
+      .menus {
+        list-style: none;
+        margin: 0;
+        padding: 30px 0 0 150px;
+        min-width: 1500px;
+        .product {
+          float: left;
+          a {
+            display: block;
+            padding: 0 30px;
+            border-right: 1px solid #ccc;
+          }
+          &:nth-last-child(1) {
+            a {
+              border-right: 0;
+            }
+          }
+          .product-img {
+            width: 100%;
+            width: 160px;
+            height: 110px;
+          }
+          .product-name {
+            width: 100%;
+            height: 16px;
+            margin-top: 16px;
+            font-size: 12px;
+            text-align: center;
+          }
+          .product-price {
+            width: 100%;
+            height: 14px;
+            margin-top: 10px;
+            font-size: 10px;
+            text-align: center;
+            color: #ff6700;
+          }
+        }
+      }
+    }
+
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+      opacity: 0;
+    }
+
   }
 
 </style>
