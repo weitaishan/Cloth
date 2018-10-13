@@ -91,20 +91,25 @@
         currentItem: this.items,
         items: [
           {
-            name: '童装',
-            type: 'kids'
+            name: '首页',
+            type: 'mainPage'
           },
           {
-            name: '牛仔',
-            type: 'cowboy'
+            name: '男装',
+            type: 'manCloth'
           },
           {
-            name: '裙子',
-            type: 'skirt'
+            name: '女装',
+            type: 'womenCloth'
+          },
+          {
+            name: '公司简介',
+            type: 'companyProfile'
           }],
-        kids: [{name: '衣服'}],
-        cowboy: [{name: '牛仔'}],
-        skirt: [{name: '裙子'}],
+        mainPage: [{name: '首页'}],
+        manCloth: [{name: '男装'}],
+        womenCloth: [{name: '女装'}],
+        companyProfile:[{name:'公司简介'}],
       }
 
     },

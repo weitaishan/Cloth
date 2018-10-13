@@ -81,28 +81,31 @@
   #swiper-container {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: auto;
     top: 80px;
   }
 
   img {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: auto;
     background-size: 100%;
   }
 
   .swiper-button-prev {
-    background-image: url('../assets/swiper_button_left.png');
-    width: 30px;
-    height: 30px;
+    /*background-image: url('../assets/swiper_button_left.png');*/
+    width: 0px;
+    height: 0px;
     background-size: 100%;
   }
 
   .swiper-button-next {
-    width: 30px;
-    height: 30px;
+    width: 0px;
+    height: 0px;
     background-size: 100%;
-    background-image: url('../assets/swiper_button_right.png');
+    /*background-image: url('../assets/swiper_button_right.png');*/
+  }
+  .swiper-pagination{
+
   }
 </style>
