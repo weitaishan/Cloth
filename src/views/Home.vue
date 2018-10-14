@@ -6,7 +6,6 @@
     <main-image></main-image>
     <main-banner></main-banner>
     <main-Scene></main-Scene>
-    <goods-item></goods-item>
   </div>
 </template>
 
@@ -15,15 +14,12 @@
 import mainImage from '../components/mainImage.vue'
 import mainBanner from '../components/mainBanner.vue'
 import mainScene from '../components/mainScene.vue'
-import GoodsItem from '../components/GoodsItem.vue'
-
 export default {
   name: 'home',
   components: {
     'main-image':mainImage,
     'main-banner':mainBanner,
     'main-Scene':mainScene,
-    'goods-item':GoodsItem
   }
 }
 </script>
@@ -31,7 +27,7 @@ export default {
 <style lang="less" type="text/less">
 
   .home{
-
+    min-width: 1100px;
     background: #f5f5f5;
   }
 </style>

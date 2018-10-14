@@ -144,6 +144,7 @@
     height: 80px;
     width: 100%;
     background-color: black;
+    min-width: 1100px;
 
     .logo {
       left: 20px;
