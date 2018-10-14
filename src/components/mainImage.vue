@@ -8,7 +8,7 @@
 </template>
 
 <script type="text/javascript">
-	
+
 
 </script>
 
@@ -21,10 +21,11 @@
 	}
 	.mainImage{
 		@mainImageLayout();
-	}
-	.mainImage img{
-		width: 100%;
-		height: auto;
+
+    img{
+      width: 100%;
+      height: auto;
+    }
 	}
 	// 缩放的时候:img:height:auto; :div:height:auto;就缩放自如,比例缩放了
 </style>
