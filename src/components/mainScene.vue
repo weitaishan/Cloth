@@ -4,7 +4,7 @@
 			<li v-for="item in items">
 				<a v-bind:href=item.url>
 					<!-- vue读值: v-bind或者: -->
-					<img v-bind:src=item.image>
+					<img class="img" v-bind:src=item.image>
 					<!-- {{取文本值}} -->
 					<p>{{item.title}}</p>
 					<p class="buy">立即查看</p>
@@ -64,11 +64,22 @@
 		/*float: left;*/
 		/*float会失去点击事件*/
 		display: inline-block;
+		background-color: white;
+	}
+	.mainSceneDiv ul li:hover{
+    	border: 0 solid #fff;
+   		box-shadow: 1px 2px 6px 0 rgba(163,163,163,0.5);
 	}
 	.mainSceneDiv ul li p{
 		text-align: center;
 	}
 	.buy{
 		color: #0287cd;
+	}
+	.img{
+		position: relative;
+		top: 4px;
+		left: 4px;
+		width: 452px;
 	}
 </style>
